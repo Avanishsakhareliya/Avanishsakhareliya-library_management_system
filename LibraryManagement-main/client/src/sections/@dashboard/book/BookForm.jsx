@@ -32,7 +32,6 @@ const BookForm = ({
                     setBook,
                     handleAddBook,
                     handleUpdateBook,
-                    setLoader,
                     loader
                   }) => {
 
@@ -223,7 +222,8 @@ BookForm.propTypes = {
   book: PropTypes.object,
   setBook: PropTypes.func,
   handleAddBook: PropTypes.func,
-  handleUpdateBook: PropTypes.func
+  handleUpdateBook: PropTypes.func,
+  loader:PropTypes.bool
 };
 
 export default BookForm
