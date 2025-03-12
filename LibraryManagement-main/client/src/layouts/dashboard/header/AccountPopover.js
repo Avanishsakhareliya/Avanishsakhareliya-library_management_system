@@ -13,6 +13,8 @@ export default function AccountPopover() {
     handleClose();
     axios.get(`${config.BACKEND_API_URL}/api/auth/logout`, { withCredentials: true })
       .then((response) => {
+        logout();
+        localStorage.removeItem("user");
         // handle success
         if (response.status === 200) {
           console.log(response.data);
@@ -21,7 +23,9 @@ export default function AccountPopover() {
       })
       .catch((error) => {
         // handle error
-        alert(error);
+        logout();
+        localStorage.removeItem("user");
+        alert("user logout ");
         console.log(error);
       })
   };
