@@ -46,7 +46,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Use CORS for Cross Origin Resource Sharing
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "https://newclientlms.vercel.app",
   credentials: true
 }))
 
