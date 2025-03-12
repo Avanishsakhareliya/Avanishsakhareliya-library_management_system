@@ -9,11 +9,7 @@
     "mui"
   ],
   "authors": [
-    "Sandul Renuja",
-    "Abdullah Jasmine",
-    "Ravindu Wegiriya",
-    "Kaveesha Muthukuda",
-    "Induwara Pathirana"
+    "Avanish"
   ],
   "licence": "MIT",
   "version": "1.6.0",
@@ -93,5 +89,6 @@
   },
   "overrides": {
     "@svgr/webpack": "^6.5.0"
-  }
+  },
+  "proxy": "https://test-lms-hvap.onrender.com"
 }
