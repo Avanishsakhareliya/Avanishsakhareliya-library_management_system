@@ -8,7 +8,7 @@ import { useAuth } from "../../../hooks/useAuth";
 
 import Logo from "../../../components/logo";
 import { SignupForm } from "./index";
-
+import config from "../../../config";
 // ----------------------------------------------------------------------
 
 const StyledRoot = styled("div")(({ theme }) => ({
@@ -40,7 +40,7 @@ export default function SignupPage() {
     }
     return <Navigate to={"/books"} replace />;
   }
-
+console.log(config);
   const loginUser = ({ name, email, password, isAdmin, photoUrl, dob, phone }) => {
     if (email === "" || password === "" || phone === "" || dob === "") {
       toast.error("Please enter user Data properly");
@@ -50,7 +50,7 @@ export default function SignupPage() {
         toast.error("Please enter a valid phone number");
       }
      else {
-        axios.post(`http://localhost:8080/api/auth/register`, { name, email, password, isAdmin, photoUrl, dob, phone }, { withCredentials: false })
+        axios.post(`${config.BACKEND_API_URL}/api/auth/register`, { name, email, password, isAdmin, photoUrl, dob, phone }, { withCredentials: false })
         .then((response) => {
           // handle success
           if (response.status === 201) {

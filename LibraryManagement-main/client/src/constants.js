@@ -1,4 +1,5 @@
-const backendApiUrl = "http://localhost:8080/api";
+// const backendApiUrl = "http://localhost:8080/api";
+const backendApiUrl = "https://test-lms-hvap.onrender.com/api";
 
 const routes = {
   AUTHOR: "author",

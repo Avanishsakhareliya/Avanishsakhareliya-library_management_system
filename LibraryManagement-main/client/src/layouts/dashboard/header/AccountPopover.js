@@ -3,15 +3,15 @@ import { alpha } from "@mui/material/styles";
 import { Avatar, Box, Divider, IconButton, MenuItem, Popover, Typography } from "@mui/material";
 import axios from "axios";
 import { useAuth } from "../../../hooks/useAuth";
+import config from "../../../config"
 
 export default function AccountPopover() {
   const { user } = useAuth();
   const { logout } = useAuth();
-  const [open, setOpen] = useState(null);
-
+  const [open, setOpen] = useState(null);  
   const logoutUser = () => {
     handleClose();
-    axios.get(`http://localhost:8080/api/auth/logout`, { withCredentials: true })
+    axios.get(`${config.BACKEND_API_URL}/api/auth/logout`, { withCredentials: true })
       .then((response) => {
         // handle success
         if (response.status === 200) {
